@@ -334,6 +334,12 @@
             background: var(--accent);
             flex-shrink: 0;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--bg);
         }
 
         .reporter-avatar img {
@@ -462,6 +468,20 @@
             text-shadow: 0 2px 5px black;
             background: linear-gradient(transparent, rgba(0,0,0,0.7));
             padding: 20px 0;
+        }
+
+        /* Fallback avatar styling */
+        .avatar-fallback {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent);
+            color: var(--bg);
+            font-size: 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
         }
 
         /* === IMPROVED RESPONSIVE STYLES === */
@@ -766,9 +786,11 @@
 
         <main>
             <div class="report-meta">
-                <div class="reporter-avatar">
-                    <img src="Eunice.png" alt="Eunice - Senior Correspondent" class="clickable-image"
-                        onerror="this.style.display='none'; this.parentElement.style.background='var(--accent)'">
+                <div class="reporter-avatar" id="eunice-avatar">
+                    <!-- Using a data URI for a simple reporter avatar since Eunice.png is missing -->
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%2300d4ff'/%3E%3Ccircle cx='50' cy='40' r='20' fill='%23050a0f'/%3E%3Ccircle cx='35' cy='35' r='3' fill='%23ffffff'/%3E%3Ccircle cx='65' cy='35' r='3' fill='%23ffffff'/%3E%3Cpath d='M35 55 Q50 70,65 55' stroke='%23ffffff' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Ctext x='50' y='85' font-size='12' text-anchor='middle' fill='%23050a0f' font-weight='bold'%3EEUNICE%3C/text%3E%3C/svg%3E"
+                         alt="Eunice - Senior Correspondent" class="clickable-image"
+                         onerror="this.style.display='none'; document.getElementById('eunice-avatar').innerHTML='<div class=\'avatar-fallback\'>E</div>'">
                 </div>
                 <div>
                     <div style="font-weight: 800;">By Eunice</div>
@@ -889,11 +911,11 @@
                         <span class="story-tag" style="color: var(--crimson);">✦ OBITUARY ✦</span>
                         <h3>ANTANTA: 2025-2026</h3>
 
-                        <!-- Square RIP image -->
+                        <!-- Square RIP image - using a data URI fallback -->
                         <div
                             style="width: 150px; height: 150px; border-radius: 10px; overflow: hidden; margin: 0 auto 1rem auto; border: 1px solid var(--border); background: rgba(0,0,0,0.3);">
                             <img src="rip.png" alt="RIP Antanta" class="clickable-image" style="width: 100%; height: 100%; object-fit: cover;"
-                                onerror="this.style.display='none'">
+                                onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'200\' viewBox=\'0 0 200 200\'%3E%3Crect width=\'200\' height=\'200\' fill=\'%23000\'/%3E%3Ctext x=\'100\' y=\'100\' font-size=\'24\' text-anchor=\'middle\' fill=\'%23ff3e3e\' font-family=\'Cinzel\'%3ERIP%3C/text%3E%3Ctext x=\'100\' y=\'130\' font-size=\'18\' text-anchor=\'middle\' fill=\'%23ffffff\'%3EANTANTA%3C/text%3E%3Ctext x=\'100\' y=\'160\' font-size=\'14\' text-anchor=\'middle\' fill=\'%23888888\'%3E2025-2026%3C/text%3E%3C/svg%3E'">
                         </div>
 
                         <p style="font-size: 0.9rem;">One of the Big Three alliances has fallen. Sources say the
@@ -968,11 +990,12 @@
             <div class="sidebar-widget">
                 <div class="widget-title">Gaeto's Cooking</div>
 
-                <!-- Poster image -->
+                <!-- Poster image - using a data URI fallback -->
                 <div
                     style="width: 100%; height: 120px; border-radius: 10px; overflow: hidden; margin-bottom: 1rem; border: 1px solid var(--border); background: rgba(0,0,0,0.3);">
-                    <img src="poster1.png" alt="Ancient Creatures Release" class="clickable-image"
-                        style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'">
+                    <img src="poster1.png" alt="Ancient Creatures Release - Black Dragon and Strange Shadow" class="clickable-image"
+                        style="width: 100%; height: 100%; object-fit: cover;" 
+                        onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'120\' viewBox=\'0 0 400 120\'%3E%3Crect width=\'400\' height=\'120\' fill=\'%231a1a2a\'/%3E%3Ctext x=\'200\' y=\'40\' font-size=\'24\' text-anchor=\'middle\' fill=\'%2300d4ff\' font-family=\'Cinzel\'%3EGAETO\'S COOKING%3C/text%3E%3Ctext x=\'200\' y=\'70\' font-size=\'18\' text-anchor=\'middle\' fill=\'%23ffffff\'%3E🐉 BLACK DRAGON%3C/text%3E%3Ctext x=\'200\' y=\'95\' font-size=\'18\' text-anchor=\'middle\' fill=\'%23ffffff\'%3E👻 STRANGE SHADOW%3C/text%3E%3C/svg%3E'">
                 </div>
 
                 <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Gaeto is experimenting with the release of <b>two
@@ -990,11 +1013,12 @@
 
                 <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Bilins has declared an <b
                         style="color: var(--crimson);">all-out war</b> on:</p>
-                <!-- Poster image -->
+                <!-- Poster image - using a data URI fallback -->
                 <div
                     style="width: 100%; height: 120px; border-radius: 10px; overflow: hidden; margin-bottom: 1rem; border: 1px solid var(--border); background: rgba(0,0,0,0.3);">
-                    <img src="poster2.png" alt="Bilins' War on Supernatural" class="clickable-image"
-                        style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'">
+                    <img src="poster2.png" alt="Bilins' War on Supernatural - All Undead!" class="clickable-image"
+                        style="width: 100%; height: 100%; object-fit: cover;" 
+                        onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'120\' viewBox=\'0 0 400 120\'%3E%3Crect width=\'400\' height=\'120\' fill=\'%231a1a2a\'/%3E%3Ctext x=\'200\' y=\'40\' font-size=\'24\' text-anchor=\'middle\' fill=\'%23ff3e3e\' font-family=\'Cinzel\'%3EBILINS\' LAB%3C/text%3E%3Ctext x=\'200\' y=\'70\' font-size=\'18\' text-anchor=\'middle\' fill=\'%23ffffff\'%3E⚔️ WAR ON ALL UNDEAD ⚔️%3C/text%3E%3Ctext x=\'200\' y=\'95\' font-size=\'14\' text-anchor=\'middle\' fill=\'%23888888\'%3E👻 GHOSTS  😈 SPIRITS  🧟 ZOMBIES%3C/text%3E%3C/svg%3E'">
                 </div>
 
                 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; margin: 1rem 0;">
