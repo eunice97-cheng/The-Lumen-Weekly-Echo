@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Lumen Weekly Echo — ★Hydra★ Strikes! Eunice's Alliance Seizes Pristine Wall</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@400;700;800&family=Space+Grotesk:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #05050a;
+            --card: rgba(20, 20, 35, 0.7);
+            --accent: #00d4ff;
+            --gold: #e2b053;
+            --crimson: #ff3e3e;
+            --green: #00ff9d;
+            --text: #f0f0f5;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(0, 212, 255, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(226, 176, 83, 0.05) 0%, transparent 40%);
+            line-height: 1.6;
+        }
+
+        /* --- Ticker --- */
+        .news-ticker {
+            background: var(--crimson);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            overflow: hidden;
+            white-space: nowrap;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+            width: 100%;
+            position: relative;
+        }
+
+        .ticker-wrap {
+            display: inline-block;
+            white-space: nowrap;
+            animation: ticker 30s linear infinite;
+        }
+
+        .ticker-wrap::after {
+            content: " +++ " attr(data-content);
+            white-space: nowrap;
+        }
+
+        @keyframes ticker {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* --- Navigation --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background: rgba(5, 5, 10, 0.8);
+            backdrop-filter: blur(15px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+            filter: drop-shadow(0 0 10px rgba(226, 176, 83, 0.4));
+            cursor: pointer;
+        }
+
+        .logo-text {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: var(--gold);
+            letter-spacing: 2px;
+            line-height: 1.1;
+        }
+
+        .logo-tagline {
+            font-size: 0.75rem;
+            opacity: 0.6;
+            letter-spacing: 1px;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            opacity: 0.7;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+            color: var(--accent);
+        }
+
+        /* --- Traditional Date Bar --- */
+        .date-bar {
+            background: rgba(0, 0, 0, 0.3);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 0.5rem 0;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            backdrop-filter: blur(5px);
+        }
+
+        .date-bar-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .date-bar-left {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .date-bar-center {
+            color: var(--gold);
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+        }
+
+        .date-bar-right {
+            color: var(--text);
+            opacity: 0.8;
+            font-size: 0.8rem;
+        }
+
+        /* --- Main Layout --- */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 2rem;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            grid-column: span 2;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            border-radius: 30px;
+            padding: 4rem 3rem;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "BREAKING NEWS";
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--crimson);
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-weight: 800;
+            font-size: 0.7rem;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            margin: 0;
+            line-height: 1.2;
+            color: #fff;
+        }
+
+        .hero .hydra-star {
+            color: var(--gold);
+            font-size: 2.8rem;
+            vertical-align: middle;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .hero .deck {
+            font-size: 1.3rem;
+            color: var(--gold);
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        /* --- Secondary Story Cards --- */
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .story-card {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .story-card:hover {
+            border-color: var(--accent);
+        }
+
+        .story-card h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+
+        .story-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        /* --- Alliance Tracker - Updated for 4 columns --- */
+        .alliance-hub {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .alliance-card {
+            background: var(--card);
+            padding: 1.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            text-align: center;
+            position: relative;
+        }
+
+        .alliance-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+
+        .alliance-card h3 {
+            margin: 0;
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .status-tag {
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* --- Content --- */
+        .report-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .reporter-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid var(--gold);
+            background: var(--accent);
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+
+        .reporter-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .main-text {
+            font-size: 1.15rem;
+            color: #ccc;
+        }
+
+        .main-text b {
+            color: var(--gold);
+        }
+
+        /* --- Sidebar --- */
+        .sidebar-widget {
+            background: var(--card);
+            border-radius: 25px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            margin-bottom: 2rem;
+        }
+
+        .widget-title {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            font-size: 1.1rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .gm-quote {
+            font-style: italic;
+            border-left: 3px solid var(--accent);
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* Image cursor styling */
+        img {
+            cursor: pointer;
+        }
+
+        /* Image Modal Styles */
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(5px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            border: 3px solid var(--gold);
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(226, 176, 83, 0.3);
+            animation: zoom 0.3s ease;
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            color: var(--gold);
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            z-index: 10000;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            border: 1px solid var(--gold);
+        }
+
+        .modal-close:hover {
+            color: var(--crimson);
+            transform: rotate(90deg);
+            border-color: var(--crimson);
+        }
+
+        .modal-caption {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: var(--gold);
+            font-size: 1rem;
+            font-weight: 500;
+            text-shadow: 0 2px 5px black;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            padding: 20px 0;
+        }
+
+        /* === IMPROVED RESPONSIVE STYLES === */
+        
+        /* Tablet (768px - 1000px) */
+        @media (max-width: 1000px) and (min-width: 769px) {
+            .container {
+                grid-template-columns: 1fr 280px;
+                gap: 1.5rem;
+                padding: 1.5rem;
+            }
+
+            .hero {
+                padding: 3rem 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .alliance-hub {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .story-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .date-bar-content {
+                padding: 0 1rem;
+            }
+
+            .logo-text {
+                font-size: 1.6rem;
+            }
+
+            .logo img {
+                height: 50px;
+            }
+        }
+
+        /* Mobile (up to 768px) */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            nav {
+                flex-direction: column;
+                padding: 1rem;
+                gap: 0.8rem;
+            }
+
+            .logo {
+                flex-direction: column;
+                text-align: center;
+                gap: 8px;
+            }
+
+            .logo img {
+                height: 60px;
+            }
+
+            .logo-text {
+                font-size: 1.5rem;
+            }
+
+            .logo-tagline {
+                font-size: 0.7rem;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.8rem 1rem;
+                font-size: 0.75rem;
+            }
+
+            .date-bar-content {
+                flex-direction: column;
+                gap: 8px;
+                padding: 0.5rem 1rem;
+                text-align: center;
+            }
+
+            .date-bar-left, .date-bar-center, .date-bar-right {
+                width: 100%;
+                text-align: center;
+            }
+
+            .hero {
+                grid-column: span 1;
+                padding: 2rem 1.5rem;
+                border-radius: 20px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero .hydra-star {
+                font-size: 1.6rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero .deck {
+                font-size: 1.1rem;
+            }
+
+            .hero::before {
+                top: 10px;
+                right: 10px;
+                font-size: 0.6rem;
+                padding: 4px 10px;
+            }
+
+            .alliance-hub {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .report-meta {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .reporter-avatar {
+                width: 80px;
+                height: 80px;
+            }
+
+            .main-text {
+                font-size: 1rem;
+            }
+
+            .main-text h3 {
+                font-size: 1.3rem;
+            }
+
+            .sidebar-widget {
+                padding: 1.2rem;
+                margin-bottom: 1rem;
+            }
+
+            .gm-quote {
+                font-size: 0.85rem;
+            }
+
+            footer {
+                padding: 2rem 1rem !important;
+                font-size: 0.7rem !important;
+            }
+
+            /* Fix for images in story cards on mobile */
+            .story-card div[style*="width: 150px"] {
+                width: 120px !important;
+                height: 120px !important;
+            }
+        }
+
+        /* Small mobile (up to 480px) */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero .hydra-star {
+                font-size: 1.3rem;
+            }
+
+            .hero .deck {
+                font-size: 0.9rem;
+            }
+
+            .logo-text {
+                font-size: 1.2rem;
+            }
+
+            .logo img {
+                height: 50px;
+            }
+
+            .nav-links {
+                font-size: 0.7rem;
+            }
+
+            .alliance-card {
+                padding: 1rem;
+            }
+
+            .story-card {
+                padding: 1rem;
+            }
+
+            .story-card div[style*="width: 150px"] {
+                width: 100px !important;
+                height: 100px !important;
+            }
+
+            .sidebar-widget {
+                padding: 1rem;
+            }
+
+            .widget-title {
+                font-size: 1rem;
+            }
+
+            .date-bar-content {
+                font-size: 0.75rem;
+            }
+            
+            .modal-close {
+                top: 15px;
+                right: 15px;
+                font-size: 30px;
+                width: 40px;
+                height: 40px;
+            }
+            
+            .modal-caption {
+                font-size: 0.8rem;
+                bottom: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="news-ticker">
+        <div class="ticker-wrap">
+            +++ ★Hydra★ CONQUERS PRISTINE WALL "FOR FUN" +++ ANTANTA DISBANDS AFTER MONTHS OF GLORY +++ VORTEX IN
+            TURMOIL BUT BUILDING MOMENTUM +++ NEW ALLIANCE FORMED BY EX-VORTEX MEMBER +++ ELYSIUM RELEASED: OUTLAWS
+            STILL GOING STRONG +++ BILINS: "JUST 5 MORE MINUTES" +++ GOLD PRICE EXPECTED TO INCREASE DUE TO CULTIVATOR'S
+            STORM +++ GAETO RELEASES BLACK DRAGON & STRANGE SHADOW +++ BILINS DECLARES WAR ON ALL UNDEAD +++ HAPPY
+            WOMEN'S DAY! DROP EVENT PACK AT LUMEN NPC +++
+        </div>
+    </div>
+
+    <nav>
+        <div class="logo">
+            <img src="logo.png" alt="The Lumen Weekly Echo logo" class="clickable-image" onerror="this.style.display='none'">
+            <div>
+                <div class="logo-text">THE LUMEN WEEKLY ECHO</div>
+                <div class="logo-tagline">SINCE FACTS AND BULLSHITS BECAME FUN</div>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="#">War Reports</a>
+            <a href="#">Market Prices</a>
+            <a href="#">Gaeto's Cooking</a>
+            <a href="#">Bilins' Lab</a>
+            <a href="#">Trending</a>
+        </div>
+    </nav>
+
+    <!-- Traditional Date Bar -->
+    <div class="date-bar">
+        <div class="date-bar-content">
+            <div class="date-bar-left">
+                <span>1st EDITION OF MARCH</span>
+            </div>
+            <div class="date-bar-center">
+                <span>✦</span>
+                <span style="margin: 0 15px;">THE LUMEN WEEKLY ECHO</span>
+                <span>✦</span>
+            </div>
+            <div class="date-bar-right">
+                <span>March 3, 2026</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <header class="hero">
+            <p>🔴 BREAKING: TERRITORIAL WAR SHOCKER</p>
+            <h1><span class="hydra-star">★</span>Hydra<span class="hydra-star">★</span> STRIKES! <br>New Alliance
+                Seizes Pristine Wall</h1>
+            <div class="deck">"I put down my notebook and picked up a weapon... for fun" — Eunice</div>
+            <div style="margin-top: 2rem;">
+                <span
+                    style="background: var(--gold); color: black; padding: 5px 15px; border-radius: 50px; font-weight: 800; font-size: 0.8rem;">EUNICE
+                    EXCLUSIVE</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="report-meta">
+                <div class="reporter-avatar">
+                    <img src="Eunice.png" alt="Eunice - Senior Correspondent" class="clickable-image"
+                        onerror="this.style.display='none'; this.parentElement.style.background='var(--accent)'">
+                </div>
+                <div>
+                    <div style="font-weight: 800;">By Eunice</div>
+                    <div style="font-size: 0.8rem; opacity: 0.6;">Senior Correspondent, Hidden Echoes</div>
+                    <div style="font-size: 0.75rem; color: var(--accent); margin-top: 4px;">✧ ALSO: Marshal of ★Hydra★
+                        Alliance ✧</div>
+                </div>
+            </div>
+
+            <article class="main-text">
+                <p><b>PRISTINE WALL</b> — In a stunning turn of events that has sent shockwaves through the server, I'm
+                    writing this not just as your trusted reporter, but as the Marshal of the <b>accidental victorious
+                        ★Hydra★ alliance</b>.</p>
+
+                <p>Twenty-four hours ago, I was hiding in bushes taking notes. Today, I'm standing on the conquered
+                    Pristine Wall, still holding my notebook in one hand and a +11 Refined weapon in the other. The
+                    sight is surreal: ★Hydra★ banners flying where Antanta's once stood for weeks.</p>
+
+                <p>Let me be clear: <b>I never wanted this</b>. Territorial war? Too much responsibility. Politics?
+                    Please. I just saw an undefended wall and thought, "Huh, that'd be funny to take." Next thing I
+                    know, I'm standing on Pristine Wall—<b>thanking Larura, my second in command, Warlord of ★Hydra★ for
+                        the victory</b>. She did the actual work while I was taking notes from the backline.</p>
+
+                <p>"I was watching the whole thing," said Gaeto, standing nearby with a digital fire extinguisher just
+                    in case. "No one was actually defending. The war ended while I was still debating if I should deploy
+                    my celestial army to defend it or declare it non-legit. The problem? The war declaration was filed
+                    when Antanta still existed. They disbanded right before the war started. So it's not a PvP
+                    territorial war... but it's also not a PvE territorial war."</p>
+
+                <p>He paused, looking at the ★Hydra★ banners now flying over Pristine Wall.</p>
+
+                <p>"And then Outlaws did the exact same thing at Lunar Well. Same day. Same loophole. Two undefended
+                    territories, two alliances claiming victory while I'm standing here with my celestial army going
+                    '...do I deploy? Do I not?'"</p>
+
+                <p>He rubbed his temples.</p>
+
+                <p>"In the end, I can only say this: it's a perfectly abused, unforeseen opportunity. ★Hydra★ didn't
+                    break the rules. Outlaws didn't break the rules. They just... walked through a door that shouldn't
+                    have been open. I'm not sure if I should be impressed, update the rulebook, or both. Probably both."
+                </p>
+
+                <h3>The Accidental Conquest</h3>
+                <p>How did a reporter's alliance end up with a territory with only 2 active personnel? One word:
+                    <b>Luck</b>.
+                </p>
+
+                <p>"Eunice literally said 'LOL let's take Pristine Wall' in alliance chat," recalls a ★Hydra★ member who
+                    wished to remain anonymous. "I never thought she was serious. Next thing I know, I am standing on a
+                    conquered territory. I still don't know what happened."</p>
+
+                <p>The shocking disbandment of one of the Big Three alliances left <b>every territory Antanta once
+                        controlled completely undefended</b>—Pristine Wall, Lunar Well, and all the others, literally no
+                    one home. But according to Gaeto, those days are over: all former Antanta territories are now
+                    considered <b>neutral ground</b>, and the <b>Celestial Army will be deployed for all future wars</b>
+                    over them. No more undefended walls or wells! No more taking candies from babies!</p>
+
+                <div class="alliance-hub">
+                    <div class="alliance-card">
+                        <span class="status-tag" style="color: var(--accent);">LEADING</span>
+                        <h3>OUTLAWS</h3>
+                        <p style="font-size: 0.75rem; opacity: 0.6;">Status: Still going strong</p>
+                    </div>
+                    <div class="alliance-card">
+                        <span class="status-tag" style="color: var(--gold);">CHAOTIC</span>
+                        <h3>VORTEX</h3>
+                        <p style="font-size: 0.75rem; opacity: 0.6;">Status: In shambles</p>
+                        <p style="font-size: 0.75rem; opacity: 0.6; font-style: italic;">Find out more below</p>
+                    </div>
+                    <div class="alliance-card">
+                        <span class="status-tag" style="color: var(--crimson);">DISBANDED</span>
+                        <h3>ANTANTA</h3>
+                        <p style="font-size: 0.75rem; opacity: 0.6;">Status: Gone, but fabulous</p>
+                        <p style="font-size: 0.75rem; opacity: 0.6; font-style: italic;">Let's hope they make a come
+                            back soon</p>
+                    </div>
+                    <div class="alliance-card">
+                        <span class="status-tag" style="color: var(--green);">ACCIDENTAL VICTORS</span>
+                        <h3>★Hydra★</h3>
+                        <p style="font-size: 0.75rem; opacity: 0.6;">Status: No interest in war</p>
+                    </div>
+                </div>
+
+                <!-- Vortex in Turmoil Widget -->
+                <div class="sidebar-widget" style="margin-top: 2rem;">
+                    <div class="widget-title">Vortex in Turmoil</div>
+
+                    <p style="font-size: 0.9rem;">The recent departure of a key member from Vortex has sent ripples
+                        through the alliance. The individual in question, who has since formed a new alliance with
+                        several former Vortex members (some are also possibly alt accounts), cited leadership concerns
+                        as his reason for leaving—specifically claiming that Kiani, a prominent Vortex figure, was
+                        stepping
+                        down.</p>
+
+                    <p style="font-size: 0.9rem; margin-top: 1rem;">Vortex leadership has responded directly to these
+                        claims:</p>
+
+                    <div
+                        style="background: rgba(255, 62, 62, 0.1); border-left: 3px solid var(--crimson); padding: 1rem; margin: 1rem 0; border-radius: 0 10px 10px 10px;">
+                        <p style="font-size: 1rem; margin: 0; font-style: italic;">"Who said I quit? I legit was dealing
+                            with RL. TF!"</p>
+                        <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">— Kiani, leading Vortex member,
+                            in an exclusive interview</p>
+                    </div>
+
+                    <p style="font-size: 0.9rem;">The unnamed individual's new alliance remains unnamed, and its
+                        intentions unclear. For now, Vortex maintains that this is a temporary break, not a permanent
+                        departure.</p>
+
+                    <div style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.6; font-style: italic;">
+                        <span>✦ Alt account allegations remain unconfirmed ✦</span>
+                    </div>
+                </div>
+
+                <!-- Secondary Stories Grid - OBITUARY left, ELYSIUM QUESTION right -->
+                <div class="story-grid">
+                    <div class="story-card">
+                        <span class="story-tag" style="color: var(--crimson);">✦ OBITUARY ✦</span>
+                        <h3>ANTANTA: 2025-2026</h3>
+
+                        <!-- Square RIP image -->
+                        <div
+                            style="width: 150px; height: 150px; border-radius: 10px; overflow: hidden; margin: 0 auto 1rem auto; border: 1px solid var(--border); background: rgba(0,0,0,0.3);">
+                            <img src="rip.png" alt="RIP Antanta" class="clickable-image" style="width: 100%; height: 100%; object-fit: cover;"
+                                onerror="this.style.display='none'">
+                        </div>
+
+                        <p style="font-size: 0.9rem;">One of the Big Three alliances has fallen. Sources say the
+                            disbandment came suddenly, leaving members scattered and territories undefended — a
+                            vulnerability
+                            ★Hydra★ exploited within hours.</p>
+                        <p style="font-size: 0.8rem; opacity: 0.6; margin-bottom: 0.5rem;">"They will be missed," says
+                            Gaeto.
+                            "But I have a feeling this isn't the last we've seen of Antanta."</p>
+                        <p style="font-size: 0.8rem; opacity: 0.6; margin-bottom: 0;">"5 more minutes," Bilins says.</p>
+                        <p
+                            style="font-size: 0.8rem; margin-top: 1rem; padding-top: 0.8rem; border-top: 1px dashed var(--border); color: var(--accent); font-style: italic;">
+                            <span>✎ Editor's Note:</span> They're just taking a break. I think they will rebuild and
+                            return. — Eunice
+                        </p>
+                    </div>
+
+                    <div class="story-card">
+                        <span class="story-tag" style="color: var(--accent);">✦ ANALYSIS ✦</span>
+                        <h3>The Elysium Question</h3>
+                        <p style="font-size: 0.9rem;">With Antanta gone and Vortex in chaos, <b>Outlaws</b> stands alone
+                            at the
+                            top. Elysium's release this week was supposed to bring new challenges—but who's left to
+                            challenge
+                            them?</p>
+                        <div
+                            style="background: rgba(0,212,255,0.1); padding: 0.8rem; border-radius: 10px; margin-top: 1rem;">
+                            <span style="font-size: 0.7rem; text-transform: uppercase; opacity: 0.6;">Next Week's Big
+                                Question</span>
+                            <p style="margin: 5px 0 0; font-weight: 700;">For months, Vortex, Antanta, and Outlaws
+                                formed an unshakable triangle of power. Now, with Antanta gone, Vortex is in disarray
+                                but steadily building momentum for a comeback. The balance has shattered—but will a new
+                                alliance rise to challenge Outlaws, or is the age of the triangle truly over? Or will
+                                Outlaws reign supreme in a post-Antanta world?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </main>
+
+        <aside>
+            <div class="sidebar-widget">
+                <div class="widget-title">GM Wisdom</div>
+                <div class="gm-quote">
+                    "I don't have a favorite alliance, but if I did, it would be whichever one isn't currently breaking
+                    my ticket system."
+                    <br><b>— Gaeto</b>
+                </div>
+                <div class="gm-quote" style="margin-top: 1rem;">
+                    "Just 5 more minutes, for real."
+                    <br><b>— Bilins</b>
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <div class="widget-title">Market Insight</div>
+                <p style="font-size: 0.9rem;">Gold prices are projected to surge in the coming weeks as anticipation
+                    builds for the <b style="color: var(--gold);">Cultivator's Storm</b> lottery event. Market analysts
+                    predict increased demand for currency as players stock up on tickets.</p>
+                <div
+                    style="margin-top: 0.8rem; display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.3); padding: 0.5rem; border-radius: 8px;">
+                    <span style="font-size: 0.8rem;">Blood Lumen : Gold</span>
+                    <span style="font-size: 1rem; font-weight: 800; color: var(--crimson);">1 : 650</span>
+                </div>
+                <div
+                    style="margin-top: 0.8rem; font-size: 0.75rem; opacity: 0.7; border-left: 2px solid var(--gold); padding-left: 0.8rem;">
+                    <span>✦ Early birds are already hoarding gold ✦</span>
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <div class="widget-title">Gaeto's Cooking</div>
+
+                <!-- Poster image -->
+                <div
+                    style="width: 100%; height: 120px; border-radius: 10px; overflow: hidden; margin-bottom: 1rem; border: 1px solid var(--border); background: rgba(0,0,0,0.3);">
+                    <img src="poster1.png" alt="Ancient Creatures Release" class="clickable-image"
+                        style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'">
+                </div>
+
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Gaeto is experimenting with the release of <b>two
+                        ancient creatures</b>:</p>
+                <ul style="font-size: 0.9rem; padding-left: 1.5rem; margin-top: 0.3rem; color: var(--accent);">
+                    <li><span style="color: var(--text);">Black Dragon</span></li>
+                    <li><span style="color: var(--text);">Strange Shadow</span></li>
+                </ul>
+                <p style="font-size: 0.8rem; margin-top: 0.8rem; font-style: italic; opacity: 0.7;">"Let there be
+                    chaos." — Gaeto</p>
+            </div>
+
+            <div class="sidebar-widget">
+                <div class="widget-title">Bilins' Lab</div>
+
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Bilins has declared an <b
+                        style="color: var(--crimson);">all-out war</b> on:</p>
+                <!-- Poster image -->
+                <div
+                    style="width: 100%; height: 120px; border-radius: 10px; overflow: hidden; margin-bottom: 1rem; border: 1px solid var(--border); background: rgba(0,0,0,0.3);">
+                    <img src="poster2.png" alt="Bilins' War on Supernatural" class="clickable-image"
+                        style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'">
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; margin: 1rem 0;">
+                    <div
+                        style="background: rgba(255,255,255,0.05); padding: 0.4rem; border-radius: 8px; text-align: center; font-size: 0.8rem;">
+                        👻 Ghosts</div>
+                    <div
+                        style="background: rgba(255,255,255,0.05); padding: 0.4rem; border-radius: 8px; text-align: center; font-size: 0.8rem;">
+                        😈 Evil Spirits</div>
+                    <div
+                        style="background: rgba(255,255,255,0.05); padding: 0.4rem; border-radius: 8px; text-align: center; font-size: 0.8rem;">
+                        🧟 Zombies</div>
+                    <div
+                        style="background: rgba(255,255,255,0.05); padding: 0.4rem; border-radius: 8px; text-align: center; font-size: 0.8rem;">
+                        💀 ALL UNDEAD!</div>
+                </div>
+
+                <p style="font-size: 0.8rem; margin-top: 0.5rem; font-style: italic; opacity: 0.7;">"If it's undead,
+                    they shut up or you shut them up!" — Bilins</p>
+            </div>
+
+            <div class="sidebar-widget">
+                <div class="widget-title">🌸 TRENDING 🌸</div>
+
+                <p style="font-size: 1rem; font-weight: 800; color: var(--accent); margin-bottom: 0.8rem;">Happy
+                    International Women's Day!</p>
+
+                <div style="margin-bottom: 1rem; padding-bottom: 0.8rem; border-bottom: 1px dashed var(--border);">
+                    <p style="font-size: 0.9rem; margin-bottom: 0.3rem;"><b style="color: var(--gold);">Gaeto</b> wishes
+                        everyone and announces:</p>
+                    <p
+                        style="font-size: 0.9rem; background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 8px;">
+                        ✨ <b>Women's Day Drop Event on this March</b> — collect your pack at the Lumen NPC!</p>
+                </div>
+
+                <div style="margin-bottom: 1rem; padding-bottom: 0.8rem; border-bottom: 1px dashed var(--border);">
+                    <p style="font-size: 0.9rem; margin-bottom: 0.3rem;"><b style="color: var(--gold);">Bilins</b> also
+                        wishes everyone and is preparing some suprises:</p>
+                    <p
+                        style="font-size: 0.9rem; background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 8px;">
+                        🎁 Promo code with gifts... wait, just another 5 more minutes and they will be ready, I think
+                    </p>
+                </div>
+
+                <div>
+                    <p style="font-size: 0.9rem; font-style: italic; color: var(--accent);">✎ From Eunice:</p>
+                    <p style="font-size: 0.9rem; margin-top: 0.2rem;">Happy Women's Day to all the amazing women in our
+                        community! 💪🌸</p>
+                </div>
+            </div>
+
+            <div class="sidebar-widget" style="text-align: center;">
+                <div class="widget-title">Join ★Hydra★?</div>
+                <p style="font-size: 0.8rem; margin-bottom: 0.5rem;">Not accepting any new applications</p>
+                <p style="font-size: 0.7rem; opacity: 0.6; margin-bottom: 1rem;">(We have enough accidents)
+                </p>
+                <button onclick="alert('Eunice says: Sorry, we don\'t do wars. We just own a wall now.')"
+                    style="background: var(--gold); border: none; padding: 10px 20px; border-radius: 10px; font-weight: 800; cursor: pointer; color: black; opacity: 0.6;">APPLY
+                    (WE WON'T ACCEPT)</button>
+            </div>
+        </aside>
+
+    </div>
+
+    <footer
+        style="text-align: center; padding: 4rem; opacity: 0.4; font-size: 0.8rem; border-top: 1px solid var(--border);">
+        THE LUMEN WEEKLY ECHO &copy; 2026 | ALLIANCE NEUTRALITY ACT ENFORCED (EXCEPT WHEN ★Hydra★ ACCIDENTALLY WINS) |
+        EUNICE NOW OWNS A WALL AND IS CONFUSED
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal" onclick="closeModal()">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div class="modal-caption" id="modalCaption"></div>
+    </div>
+
+    <script>
+        // Image Modal Functionality
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const modalCaption = document.getElementById('modalCaption');
+        
+        // Add click event to all images
+        document.querySelectorAll('img').forEach(img => {
+            // Skip images that are hidden (onerror)
+            if (img.style.display !== 'none') {
+                img.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    openModal(this);
+                });
+            }
+        });
+        
+        function openModal(img) {
+            modal.classList.add('active');
+            modalImg.src = img.src;
+            modalCaption.innerHTML = img.alt || 'The Lumen Weekly Echo';
+            
+            // Prevent body scrolling when modal is open
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+        
+        // Prevent modal from closing when clicking on the image
+        modalImg.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    </script>
+
+</body>
+
+</html>
